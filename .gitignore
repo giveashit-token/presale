@@ -7,10 +7,3 @@
 /target/.rustc_info.json
 test-ledger
 **/*.rs.bk
-/src
-/tests
-
-check-config.ts
-/**/*.ts
-/**/*.py
-/**/*.js
