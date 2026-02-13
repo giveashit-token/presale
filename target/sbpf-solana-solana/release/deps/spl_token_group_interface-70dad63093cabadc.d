@@ -1,0 +1,10 @@
+/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/deps/spl_token_group_interface-70dad63093cabadc.d: /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/lib.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/error.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/instruction.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/state.rs
+
+/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/deps/spl_token_group_interface-70dad63093cabadc.so: /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/lib.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/error.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/instruction.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/state.rs
+
+/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/deps/libspl_token_group_interface-70dad63093cabadc.rlib: /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/lib.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/error.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/instruction.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/state.rs
+
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/lib.rs:
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/error.rs:
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/instruction.rs:
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/spl-token-group-interface-0.6.0/src/state.rs:

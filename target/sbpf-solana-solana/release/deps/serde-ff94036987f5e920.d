@@ -1,0 +1,14 @@
+/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/deps/serde-ff94036987f5e920.d: /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/build/serde-9799c36a4826e1df/out/private.rs
+
+/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/deps/libserde-ff94036987f5e920.rlib: /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/build/serde-9799c36a4826e1df/out/private.rs
+
+/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/deps/libserde-ff94036987f5e920.rmeta: /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/build/serde-9799c36a4826e1df/out/private.rs
+
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/cotko/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/build/serde-9799c36a4826e1df/out/private.rs:
+
+# env-dep:OUT_DIR=/home/cotko/projects/give-a-shit/anchor/target/sbpf-solana-solana/release/build/serde-9799c36a4826e1df/out

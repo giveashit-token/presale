@@ -1,0 +1,16 @@
+/.anchor
+/target/debug
+/target/deploy
+/target/release
+/target/sbf-solana-solana
+/target/test-ledger
+/target/.rustc_info.json
+test-ledger
+**/*.rs.bk
+/src
+/tests
+
+check-config.ts
+/**/*.ts
+/**/*.py
+/**/*.js
