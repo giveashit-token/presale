@@ -37,7 +37,7 @@ pub mod bonding_curve {
     use super::*;
 
     pub fn initialize(ctx: Context<InitializeCurveContext>, start_time: i64) -> Result<()> {
-        *ctx.accounts.data_account = DataAccount {
+        **ctx.accounts.data_account = DataAccount {
             admin: *ctx.accounts.signer.key,
             mint: ctx.accounts.mint.key(),
             sold: 0,
@@ -57,7 +57,7 @@ pub mod bonding_curve {
             curve_token_treasury_bump: ctx.bumps.curve_token_account,
             giveaway_pool_bump: ctx.bumps.giveaway_pool,
         };
-        *ctx.accounts.dev_account_1 = DevAccount {
+        **ctx.accounts.dev_account_1 = DevAccount {
             user: Pubkey::from_str(DEV_WALLET_1).unwrap(),
             claimed: 0,
             // cliff_time: start_time + 60 * 60 * 24 * 365, // cliff of 1 year
@@ -67,7 +67,7 @@ pub mod bonding_curve {
             dev_bump: ctx.bumps.dev_account_1,
             dev_pool_bump: ctx.bumps.dev_pool_1,
         };
-        *ctx.accounts.dev_account_2 = DevAccount {
+        **ctx.accounts.dev_account_2 = DevAccount {
             user: Pubkey::from_str(DEV_WALLET_2).unwrap(),
             claimed: 0,
             // cliff_time: start_time + 60 * 60 * 24 * 365, // cliff of 1 year
@@ -502,7 +502,7 @@ pub struct InitializeCurveContext<'info> {
         seeds = [b"data"],
         bump
     )]
-    pub data_account: Account<'info, DataAccount>,
+    pub data_account: Box<Account<'info, DataAccount>>,
 
     /// CHECK: curve tokens authority
     #[account(
@@ -565,7 +565,7 @@ pub struct InitializeCurveContext<'info> {
         seeds = [b"dev_account", Pubkey::from_str_const(DEV_WALLET_1).as_ref()],
         bump
     )]
-    pub dev_account_1: Account<'info, DevAccount>,
+    pub dev_account_1: Box<Account<'info, DevAccount>>,
 
      #[account(
         init,
@@ -574,7 +574,7 @@ pub struct InitializeCurveContext<'info> {
         seeds = [b"dev_account", Pubkey::from_str_const(DEV_WALLET_2).as_ref()],
         bump
     )]
-    pub dev_account_2: Account<'info, DevAccount>,
+    pub dev_account_2: Box<Account<'info, DevAccount>>,
 
     #[account(
         init,
