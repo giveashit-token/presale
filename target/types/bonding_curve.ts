@@ -5,7 +5,7 @@
  * IDL can be found at `target/idl/bonding_curve.json`.
  */
 export type BondingCurve = {
-  "address": "HakK1rCYDRTKPbxRD3yNRxHtuMfo6ipu947Lw5F6RJmJ",
+  "address": "F5zasg1ur8ZgeFPAQR6R3t5XTRVf2omfHf7rjwAb2wtk",
   "metadata": {
     "name": "bondingCurve",
     "version": "0.1.0",

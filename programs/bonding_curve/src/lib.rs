@@ -17,17 +17,14 @@ security_txt! {
     contacts: "email:info@giveashit-token.com",
     policy: "https://giveashit-token.com/terms",
     preferred_languages: "en",
-    source_code: "https://github.com/giveashit-token/app"
+    source_code: "https://github.com/giveashit-token/presale"
 }
 
-declare_id!("HakK1rCYDRTKPbxRD3yNRxHtuMfo6ipu947Lw5F6RJmJ");
+declare_id!("F5zasg1ur8ZgeFPAQR6R3t5XTRVf2omfHf7rjwAb2wtk");
 
 
 pub const AUTH_SEED: &str = "vault_and_lp_mint_auth_seed";
 
-// TODO: Update this address when deploying to mainnet
-pub const AMM_CONFIG_ADDRESS: &str = "5MxLgy9oPdTC3YgkiePHqr3EoCRD9uLVYRQS2ANAs7wy";
-pub const RAYDIUM_FEE_ADDRESS: &str = "3oE58BKVt8KuYkGxx8zBojugnymWmBiyafWgMrnb6eYy";
 pub const DEV_WALLET_1: &str = "7Y9B1UwX4Rxzb3agv9fB3JMAR1a6pKJP1EYyUcXC416x";
 pub const DEV_WALLET_2: &str = "3mfXu7qfUxcv3BWvy1f7dWFRT4t2UiNew62udN5wggNH";
 
@@ -45,12 +42,9 @@ pub mod bonding_curve {
             deposited_sol: 0,
             price_dust: 0,
             start_time: start_time,
-            // end_time: start_time + 60 * 60 * 24, // presale lasts for 24 hours
-            // claim_end: start_time + 60 * 60 * 24 * 10, // claiming linear over 10 days
-            // cliff_time: start_time + 60 * 60 * 24 * 3, // cliff of 3 days
-            end_time: start_time + 60 * 30, // presale lasts for 1 hour (test)
-            claim_end: start_time + 60 * 60, // claiming linear over 3 hours (test)
-            cliff_time: start_time + 60 * 45, // cliff of 2 hours (test)
+            end_time: start_time + 60 * 60 * 24, // presale lasts for 24 hours
+            claim_end: start_time + 60 * 60 * 24 * 30, // claiming linear over 30 days
+            cliff_time: start_time + 60 * 60 * 24 * 15, // cliff of 15 days
             pool_created: false,
             authority_bump: ctx.bumps.curve_tokens_authority,
             pool_token_treasury_bump: ctx.bumps.pool_token_treasury,
@@ -60,20 +54,16 @@ pub mod bonding_curve {
         **ctx.accounts.dev_account_1 = DevAccount {
             user: Pubkey::from_str(DEV_WALLET_1).unwrap(),
             claimed: 0,
-            // cliff_time: start_time + 60 * 60 * 24 * 365, // cliff of 1 year
-            // vesting_end: start_time + 60 * 60 * 24 * 1095, // vesting over 2 years
-            cliff_time: start_time + 60 * 75, // cliff of 4 hours (test)
-            vesting_end: start_time + 60 * 90, // vesting over 5 hours (test)
+            cliff_time: start_time + 60 * 60 * 24 * 365, // cliff of 1 year
+            vesting_end: start_time + 60 * 60 * 24 * 1095, // vesting over 2 years
             dev_bump: ctx.bumps.dev_account_1,
             dev_pool_bump: ctx.bumps.dev_pool_1,
         };
         **ctx.accounts.dev_account_2 = DevAccount {
             user: Pubkey::from_str(DEV_WALLET_2).unwrap(),
             claimed: 0,
-            // cliff_time: start_time + 60 * 60 * 24 * 365, // cliff of 1 year
-            // vesting_end: start_time + 60 * 60 * 24 * 1095, // vesting over 2 years
-            cliff_time: start_time + 60 * 75, // cliff of 4 hours (test)
-            vesting_end: start_time + 60 * 90, // vesting over 5 hours (test)
+            cliff_time: start_time + 60 * 60 * 24 * 365, // cliff of 1 year
+            vesting_end: start_time + 60 * 60 * 24 * 1095, // vesting over 2 years
             dev_bump: ctx.bumps.dev_account_2,
             dev_pool_bump: ctx.bumps.dev_pool_2,
         };
