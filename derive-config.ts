@@ -1,9 +1,10 @@
-import { PublicKey } from "@solana/web3.js";
-import * as anchor from '@coral-xyz/anchor';
+import { Connection, PublicKey } from "@solana/web3.js";
 
-// CPMM program IDs
-const DEVNET_CPMM = new PublicKey("DRaycpLY18LhpbydsBWbVJtxpNv9oXPgjRSfpF2bWpYb");
-const MAINNET_CPMM = new PublicKey("CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C");
+// Raydium CP Swap program ID on mainnet
+const RAYDIUM_CP_SWAP_MAINNET = new PublicKey("CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C");
+
+// RPC endpoint
+const MAINNET_RPC = "https://api.mainnet-beta.solana.com";
 
 function u16ToBytes(num: number): Buffer {
   const buf = Buffer.alloc(2);
@@ -20,38 +21,43 @@ function deriveAmmConfigPDA(programId: PublicKey, index: number) {
 }
 
 async function main() {
-  console.log('Deriving ammConfig PDAs for different indexes...\n');
+  const connection = new Connection(MAINNET_RPC, "confirmed");
   
-  console.log('=== DEVNET CPMM Program ===');
-  console.log(`Program: ${DEVNET_CPMM.toBase58()}\n`);
-  
-  for (let i = 0; i < 5; i++) {
-    const { pda, bump } = deriveAmmConfigPDA(DEVNET_CPMM, i);
-    console.log(`Config Index ${i}:`);
-    console.log(`  Address: ${pda.toBase58()}`);
-    console.log(`  Bump: ${bump}`);
+  console.log('Fetching ammConfig accounts for Raydium CP Swap on Mainnet...\n');
+  console.log(`Program: ${RAYDIUM_CP_SWAP_MAINNET.toBase58()}\n`);
+
+  try {
+
+    // Derive PDAs for indexes 0-10 and check which ones exist
+    console.log('=== Derived ammConfig PDAs ===');
+    for (let i = 0; i <= 10; i++) {
+      const { pda, bump } = deriveAmmConfigPDA(RAYDIUM_CP_SWAP_MAINNET, i);
+      
+      try {
+        const accountInfo = await connection.getAccountInfo(pda);
+        const exists = accountInfo !== null;
+        const status = exists ? "✓ EXISTS" : "✗ NOT FOUND";
+        
+        console.log(`Config Index ${i}:`);
+        console.log(`  Address: ${pda.toBase58()}`);
+        console.log(`  Bump: ${bump}`);
+        console.log(`  Status: ${status}`);
+        
+        if (exists && accountInfo) {
+          console.log(`  Owner: ${accountInfo.owner.toBase58()}`);
+          console.log(`  Lamports: ${accountInfo.lamports}`);
+          console.log(`  Data length: ${accountInfo.data.length}`);
+        }
+      } catch (error) {
+        console.log(`Config Index ${i}: Error fetching account`);
+      }
+      
+      console.log();
+    }
+
+  } catch (error) {
+    console.error("Error fetching accounts:", error);
   }
-  
-  console.log('\n=== MAINNET CPMM Program ===');
-  console.log(`Program: ${MAINNET_CPMM.toBase58()}\n`);
-  
-  for (let i = 0; i < 5; i++) {
-    const { pda, bump } = deriveAmmConfigPDA(MAINNET_CPMM, i);
-    console.log(`Config Index ${i}:`);
-    console.log(`  Address: ${pda.toBase58()}`);
-    console.log(`  Bump: ${bump}`);
-  }
-  
-  console.log('\n=== Verification ===');
-  console.log('The address from API: 5MxLgy9oPdTC3YgkiePHqr3EoCRD9uLVYRQS2ANAs7wy');
-  
-  const mainnetConfig0 = deriveAmmConfigPDA(MAINNET_CPMM, 0);
-  console.log(`Matches mainnet index 0: ${mainnetConfig0.pda.toBase58() === '5MxLgy9oPdTC3YgkiePHqr3EoCRD9uLVYRQS2ANAs7wy'}`);
-  
-  const devnetConfig0 = deriveAmmConfigPDA(DEVNET_CPMM, 0);
-  console.log(`Matches devnet index 0: ${devnetConfig0.pda.toBase58() === '5MxLgy9oPdTC3YgkiePHqr3EoCRD9uLVYRQS2ANAs7wy'}`);
-  
-  console.log('\n👉 For devnet, use the DEVNET addresses listed above!');
 }
 
 main();

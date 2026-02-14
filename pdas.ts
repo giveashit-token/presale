@@ -61,11 +61,11 @@ async function getTokenAccounts() {
 }
 
 async function getInitAccountsAndMint() {
-  const connection = new anchor.web3.Connection('https://devnet.helius-rpc.com/?api-key=d25ddc06-ce2f-4e6c-9ae2-d2f630f3f716', 'confirmed');
-  const rpc = createSolanaRpc("https://devnet.helius-rpc.com/?api-key=d25ddc06-ce2f-4e6c-9ae2-d2f630f3f716");
-  const rpcSubscriptions = createSolanaRpcSubscriptions("wss://devnet.helius-rpc.com/?api-key=d25ddc06-ce2f-4e6c-9ae2-d2f630f3f716");
-  const programID = new PublicKey("3drGTDYcK1gErHYNVjx62TfYNndZYorxHwBSJKmdGcB9"); // Replace with your public key
-  const mint = new PublicKey("3MBGCfxiFEe16nAQZhWiBLkRp23FvHsYXsjsHy5gzjBt"); // Replace with your mint address
+  const connection = new anchor.web3.Connection('https://mainnet.helius-rpc.com/?api-key=d25ddc06-ce2f-4e6c-9ae2-d2f630f3f716', 'confirmed');
+  const rpc = createSolanaRpc("https://mainnet.helius-rpc.com/?api-key=d25ddc06-ce2f-4e6c-9ae2-d2f630f3f716");
+  const rpcSubscriptions = createSolanaRpcSubscriptions("wss://mainnet.helius-rpc.com/?api-key=d25ddc06-ce2f-4e6c-9ae2-d2f630f3f716");
+  const programID = new PublicKey("HakK1rCYDRTKPbxRD3yNRxHtuMfo6ipu947Lw5F6RJmJ"); // Replace with your public key
+  const mint = new PublicKey("B1nWAFv3s8BkTS2FjwDPvA3GcgSKWEQivQ4jk88JApUY"); // Replace with your mint address
 
   const keypairBytes = new Uint8Array(JSON.parse(fs.readFileSync("/home/cotko/.config/solana/id.json", "utf-8")));
   const authority = await createKeyPairSignerFromBytes(keypairBytes);
